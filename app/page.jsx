@@ -8,6 +8,7 @@ import { getTipsForSession } from '@/lib/tipSession';
 
 export default function HomePage() {
   const [tips, setTips] = useState([]);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const count = Math.random() < 0.5 ? 2 : 3;
@@ -16,6 +17,23 @@ export default function HomePage() {
 
   return (
     <main>
+      {showIntro ? (
+        <div className="preview-overlay" role="dialog" aria-modal="true" aria-label="Research Note">
+          <div className="preview-card card">
+            <h2>Research Note</h2>
+            <p className="intro-text">
+              This web MVP is based on a 2025 research study, where incident reporting was identified as one of the key focus
+              areas that requires stronger attention.
+            </p>
+            <div className="preview-actions">
+              <button type="button" onClick={() => setShowIntro(false)}>
+                Enter Application
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       <header className="hero">
         <p className="hero-kicker">Kastau Tim Siber</p>
         <h1>Keamanan Informasi Anda</h1>
