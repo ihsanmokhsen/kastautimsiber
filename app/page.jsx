@@ -1,0 +1,45 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import TipCard from '@/components/TipCard';
+import { TIP_CATEGORIES } from '@/data/tips';
+import { getTipsForSession } from '@/lib/tipSession';
+
+export default function HomePage() {
+  const [tips, setTips] = useState([]);
+
+  useEffect(() => {
+    const count = Math.random() < 0.5 ? 2 : 3;
+    setTips(getTipsForSession(TIP_CATEGORIES, count));
+  }, []);
+
+  return (
+    <main>
+      <header className="hero">
+        <p className="hero-kicker">Kastau Tim Siber</p>
+        <h1>Keamanan Informasi Anda</h1>
+      </header>
+
+      <section className="primary-action card">
+        <Link href="/report" className="button report-button" aria-label="Laporkan Insiden">
+          <span className="button-outer">
+            <span className="button-inner">
+              <span>Laporkan Insiden</span>
+            </span>
+          </span>
+        </Link>
+        <p>Lapor cepat, aman, dan bisa anonim dalam kurang dari 30 detik.</p>
+      </section>
+
+      <section className="tips">
+        <h2 className="section-title">Tips Keamanan Hari Ini</h2>
+        <div className="tips-grid">
+          {tips.map((tip) => (
+            <TipCard key={tip.id} tip={tip} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
