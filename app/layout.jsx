@@ -10,7 +10,10 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <body>
         {children}
-        <footer className="app-footer">research.ihsanmokhsen.com</footer>
+        <footer className="app-footer">
+          <span>research.ihsanmokhsen.com</span>
+          <span className="app-footer-name">Muhammad Ihsanul Hakim Mokhsen S.Kom., M.S.F</span>
+        </footer>
       </body>
     </html>
   );

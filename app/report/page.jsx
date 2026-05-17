@@ -61,9 +61,12 @@ export default function ReportPage() {
   };
 
   return (
-    <main>
+    <main className="incident-app">
       <header className="sub-header">
-        <Link href="/" className="back-link">Kembali</Link>
+        <div className="top-nav-row">
+          <Link href="/kastau-tim-siber-landing.html" className="back-link">← Kembali ke Landing</Link>
+        </div>
+        <Link href="/app" className="back-link">Kembali</Link>
         <h1>Form Laporan Insiden</h1>
       </header>
 

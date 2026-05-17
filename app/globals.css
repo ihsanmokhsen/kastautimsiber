@@ -31,12 +31,11 @@ body::before {
   content: '';
   position: fixed;
   inset: -18px;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(83, 104, 120, 0.12), transparent 35%),
-    radial-gradient(circle at 85% 20%, rgba(83, 104, 120, 0.1), transparent 40%),
-    linear-gradient(165deg, var(--bg-start) 0%, #f7f7f6 55%, var(--bg-end) 100%);
+  z-index: 0;
+  pointer-events: none;
   background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)),
+    url('/gambar.png'),
     linear-gradient(
       0deg,
       transparent 24%,
@@ -61,9 +60,16 @@ body::before {
       transparent 77%,
       transparent
     );
-  background-size: 55px 55px;
-  filter: blur(8px);
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  background-size: 56% auto, 56% auto, 55px 55px, 55px 55px;
+  filter: blur(3px);
   transform: scale(1.02);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -306,6 +312,10 @@ main {
   margin-top: 6px;
 }
 
+.top-nav-row {
+  margin-bottom: 10px;
+}
+
 .back-link {
   display: inline-block;
   color: #1f3550;
@@ -385,11 +395,147 @@ main {
   right: 0;
   bottom: 8px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   font-size: 0.72rem;
   font-weight: 300;
   letter-spacing: 0.25px;
   color: rgba(29, 40, 51, 0.62);
   pointer-events: none;
+}
+
+.app-footer-name {
+  font-size: 0.66rem;
+  opacity: 0.88;
+}
+
+/* Landing-aligned style for /app and /report */
+.incident-app {
+  font-family: 'DM Sans', sans-serif;
+  max-width: 680px;
+}
+
+.incident-app .hero-kicker {
+  color: #6b6b66;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.incident-app .hero h1,
+.incident-app .sub-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #0f2044;
+  letter-spacing: -0.015em;
+}
+
+.incident-app .card {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0a0a0a;
+  border: 1px solid #e8e8e4;
+  box-shadow: 0 12px 30px rgba(15, 32, 68, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.incident-app .primary-action p,
+.incident-app .tip-card ul,
+.incident-app .privacy-note,
+.incident-app .input-note {
+  color: #6b6b66;
+}
+
+.incident-app .section-title,
+.incident-app .tip-card h3,
+.incident-app .report-form label,
+.incident-app .report-form legend {
+  color: #0f2044;
+}
+
+.landing-btn-primary {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.875rem 2rem;
+  background: #0f2044;
+  color: #ffffff;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.landing-btn-primary:hover {
+  transform: translateY(-1px);
+  opacity: 0.88;
+}
+
+.incident-app .report-button {
+  width: min(100%, 360px);
+}
+
+.incident-app .back-link {
+  color: #0f2044;
+}
+
+.incident-app .report-form {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.incident-app .report-form input,
+.incident-app .report-form select,
+.incident-app .report-form textarea {
+  background: #ffffff;
+  border: 1px solid #d4d4cf;
+  color: #0a0a0a;
+}
+
+.incident-app .report-form fieldset {
+  background: #f8fafd;
+  border-color: #dbe3f1;
+}
+
+.incident-app .sticky-submit-wrap {
+  background: rgba(240, 243, 249, 0.88);
+  border: 1px solid #d7dee9;
+}
+
+.incident-app .report-form button,
+.incident-app .preview-actions button {
+  background: #0f2044;
+  color: #ffffff;
+}
+
+.incident-app .report-form button:disabled {
+  background: #98a5bf;
+}
+
+.incident-app .secondary-btn {
+  background: #6b6b66 !important;
+}
+
+.incident-app .preview-overlay {
+  background: rgba(15, 32, 68, 0.32);
+}
+
+.incident-app .preview-card h2 {
+  color: #0f2044;
+}
+
+.incident-app .preview-card pre {
+  background: #f7f9fc;
+  border-color: #dbe3f1;
+  color: #1a1a1a;
+}
+
+.incident-app .intro-text {
+  color: #394e6a;
 }
 
 .input-note {
@@ -465,3 +611,4 @@ main {
 .secondary-btn {
   background: #6d7882 !important;
 }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap');
