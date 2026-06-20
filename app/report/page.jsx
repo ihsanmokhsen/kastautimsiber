@@ -65,6 +65,7 @@ export default function ReportPage() {
       <header className="sub-header">
         <div className="top-nav-row">
           <Link href="/kastau-tim-siber-landing.html" className="back-link">← Kembali ke Landing</Link>
+          <a href="https://bpadntt.cloud" target="_blank" rel="noopener noreferrer" className="bpadntt-badge">bpadntt.cloud</a>
         </div>
         <Link href="/app" className="back-link">Kembali</Link>
         <h1>Form Laporan Insiden</h1>

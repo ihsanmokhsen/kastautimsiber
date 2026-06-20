@@ -13,6 +13,9 @@ export default function RootLayout({ children }) {
         <footer className="app-footer">
           <span>research.ihsanmokhsen.com</span>
           <span className="app-footer-name">Muhammad Ihsanul Hakim Mokhsen S.Kom., M.S.F</span>
+          <span className="app-footer-org">
+            Bagian dari <a href="https://bpadntt.cloud" target="_blank" rel="noopener noreferrer">bpadntt.cloud</a>
+          </span>
         </footer>
       </body>
     </html>

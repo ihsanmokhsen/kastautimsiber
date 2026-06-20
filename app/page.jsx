@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
-
 export default function LandingRedirectPage() {
-  redirect('/kastau-tim-siber-landing.html');
+  return (
+    <meta httpEquiv="refresh" content="0; url=/kastau-tim-siber-landing.html" />
+  );
 }

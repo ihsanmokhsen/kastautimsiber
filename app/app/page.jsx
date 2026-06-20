@@ -8,7 +8,6 @@ import { getTipsForSession } from '@/lib/tipSession';
 
 export default function HomePage() {
   const [tips, setTips] = useState([]);
-  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const count = Math.random() < 0.5 ? 2 : 3;
@@ -17,26 +16,10 @@ export default function HomePage() {
 
   return (
     <main className="incident-app">
-      {showIntro ? (
-        <div className="preview-overlay" role="dialog" aria-modal="true" aria-label="Research Note">
-          <div className="preview-card card">
-            <h2>Research Note</h2>
-            <p className="intro-text">
-              This web MVP is based on a 2025 research study, where incident reporting was identified as one of the key focus
-              areas that requires stronger attention.
-            </p>
-            <div className="preview-actions">
-              <button type="button" onClick={() => setShowIntro(false)}>
-                Enter Application
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
       <header className="hero">
         <div className="top-nav-row">
           <Link href="/kastau-tim-siber-landing.html" className="back-link">← Kembali ke Landing</Link>
+          <a href="https://bpadntt.cloud" target="_blank" rel="noopener noreferrer" className="bpadntt-badge">bpadntt.cloud</a>
         </div>
         <p className="hero-kicker">Kastau Tim Siber</p>
         <h1>Keamanan Informasi Anda</h1>
@@ -45,6 +28,11 @@ export default function HomePage() {
       <section className="primary-action card">
         <Link href="/report" className="landing-btn-primary report-button" aria-label="Laporkan Insiden">Laporkan Insiden</Link>
         <p>Lapor cepat, aman, dan bisa anonim dalam kurang dari 30 detik.</p>
+      </section>
+
+      <section className="primary-action card" style={{ marginTop: 12 }}>
+        <Link href="/quiz" className="landing-btn-primary quiz-entry-button" aria-label="Asesmen Keamanan Siber">Asesmen Keamanan Siber</Link>
+        <p>Uji pengetahuan keamanan siber Anda dalam 10 pertanyaan singkat.</p>
       </section>
 
       <section className="tips">
